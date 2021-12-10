@@ -14,7 +14,7 @@ func (app *application) statusHandler(w http.ResponseWriter, r *http.Request) {
 
 	js, err := json.MarshalIndent(currentStatus, "", "\t")
 	if err != nil {
-		app.logger.Fatal(err)
+		app.logger.Println(err)
 	}
 
 	w.Header().Set("Content-Type", "application/json")
